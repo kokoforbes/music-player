@@ -3,6 +3,16 @@ import { v4 as uuidv4 } from "uuid";
 function chillHop() {
   return [
     {
+      name: "No Problem",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2022/11/379d68b8db2ba38393c379a5cdf74ff8b255ae9a-1024x1024.jpg",
+      artist: "cocabona, Misha, J.Lamotta",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=42051",
+      color: ["#BDAF9D", "#213769"],
+      id: uuidv4(),
+      active: true,
+    },
+    {
       name: "Early Rise",
       cover:
         "https://chillhop.com/wp-content/uploads/2022/09/8c2eab8525ace609b0c68b7564eb085d2244ee09-1024x1024.jpg",
@@ -10,7 +20,7 @@ function chillHop() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=48087",
       color: ["#23573F", "#AB8A44"],
       id: uuidv4(),
-      active: true,
+      active: false,
     },
     {
       name: "Lookaway",
@@ -19,16 +29,6 @@ function chillHop() {
       artist: "ØDYSSEE, Blumen",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=44900",
       color: ["#C2B4A0", "#B88800"],
-      id: uuidv4(),
-      active: false,
-    },
-    {
-      name: "No Problem",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2022/11/379d68b8db2ba38393c379a5cdf74ff8b255ae9a-1024x1024.jpg",
-      artist: "cocabona, Misha, J.Lamotta",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=42051",
-      color: ["#BDAF9D", "#213769"],
       id: uuidv4(),
       active: false,
     },
