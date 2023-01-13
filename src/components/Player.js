@@ -27,14 +27,31 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
     }
   };
 
-  const timeUpdateHandler = () => {};
+  const timeUpdateHandler = (e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    setSongInfo({
+      ...songInfo,
+      currentTime,
+      duration,
+    });
+
+    console.log(currentTime);
+  };
+
+  const getTime = (time) => {
+    return (
+      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+    );
+  };
 
   return (
     <div className='player'>
       <div className='time-control'>
-        <p>Start Time</p>
+        <p>{getTime(songInfo.currentTime)}</p>
         <input type='range' name='timer' id='timer' aria-label='time control' />
-        <p>End Time</p>
+        <p>{getTime(songInfo.duration)}</p>
       </div>
 
       <div className='play-control'>
@@ -62,6 +79,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       <audio
         ref={audioRef}
         onTimeUpdate={timeUpdateHandler}
+        onLoadedMetadata={timeUpdateHandler}
         src={currentSong.audio}
       ></audio>
     </div>
