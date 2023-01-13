@@ -1,6 +1,7 @@
 //IMPORT PARTIALS
 @import "./song";
 @import "./player";
+@import "./library";
 
 * {
   margin: 0;
@@ -8,8 +9,19 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
 h1,
 h2,
 h3 {
   color: rgb(54, 54, 54);
+}
+
+h3,
+h4 {
+  font-weight: 400;
+  color: rgba(100, 100, 100);
 }
