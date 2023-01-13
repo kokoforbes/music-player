@@ -12,8 +12,8 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   const audioRef = useRef(null);
 
   const [songInfo, setSongInfo] = useState({
-    currenTime: null,
-    duration: null,
+    currenTime: 0,
+    duration: 0,
   });
 
   //EVENT HANDLERS
@@ -36,10 +36,14 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       currentTime,
       duration,
     });
-
-    console.log(currentTime);
   };
 
+  const dragHandler = (e) => {
+    audioRef.current.currentTime = e.target.value;
+    setSongInfo({ ...songInfo, currentTime: e.target.value });
+  };
+
+  //FORMAT TIME
   const getTime = (time) => {
     return (
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
@@ -50,7 +54,16 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
     <div className='player'>
       <div className='time-control'>
         <p>{getTime(songInfo.currentTime)}</p>
-        <input type='range' name='timer' id='timer' aria-label='time control' />
+        <input
+          min={0}
+          max={songInfo.duration}
+          value={songInfo.currentTime}
+          onChange={dragHandler}
+          type='range'
+          name='timer'
+          id='timer'
+          aria-label='time control'
+        />
         <p>{getTime(songInfo.duration)}</p>
       </div>
 
