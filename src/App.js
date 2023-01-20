@@ -49,6 +49,7 @@ function App() {
         songs={songs}
         setCurrentSong={setCurrentSong}
         audioRef={audioRef}
+        isPlaying={isPlaying}
       />
     </div>
   );
