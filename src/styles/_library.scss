@@ -23,7 +23,7 @@
   }
 
   &:hover {
-    background-color: beige;
+    background-color: bisque;
   }
 
   .song-description {
@@ -56,4 +56,8 @@
   background: rgba(155, 155, 155, 0.5);
   border: transparent;
   border-radius: 20px;
+}
+
+.selected {
+  background-color: beige;
 }
